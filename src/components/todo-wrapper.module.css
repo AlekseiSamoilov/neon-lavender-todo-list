@@ -1,0 +1,35 @@
+.todo_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    /* border: 1px solid red; */
+    position: relative;
+    max-width: 100%;
+    /* width: 100%; */
+}
+
+.todo_title {
+    font-size: 35px;
+    color: rgba(255, 224, 130, 1);
+    font-family: JetBrains Mono;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 33px;
+    /* max-width: 400px; */
+    width: 100%; 
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 459px) {
+.todo_title {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+}
+
+

@@ -1,0 +1,104 @@
+.todo {
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    width: 100%;
+    min-height: 58px;
+    border-radius: 15px;
+    background-color: rgba(193, 191, 249, 1);
+    color: rgba(48, 46, 157, 1);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out, transform 0.4s ease;
+    box-shadow: 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1);
+}
+
+.todo:hover {
+    transform: scale(1.04);
+}
+.pics {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_text {
+    margin: 0;
+    padding: 0 20px;
+}
+
+.completed {
+    color: rgba(193, 191, 249, 1);
+    text-decoration: line-through;
+    box-shadow: none;
+    background-color: rgba(193, 191, 249, 0.12);
+}
+
+.edit_icon {
+background-image: url(../images/Ediit.svg);
+background-position: center;
+background-size: contain;
+width: 25px;
+height: 25px;
+border: none;
+transition: transform 0.3s ease;
+}
+
+.edit_icon:hover {
+    transform: scale(1.3);
+}
+
+.delete_icon:hover {
+    transform: scale(1.3);
+}
+
+.delete_icon {
+background-image: url(../images/Trash.svg);
+background-position: center;
+background-size: contain;
+width: 25px;
+height: 25px;
+border: none;
+transition: transform 0.3s ease;
+}
+
+@media (max-width: 459px) {
+    .todo {
+        margin: 15px 0;
+        min-height: 35px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 20px;
+        box-shadow: 0 0 10px 2px rgba(143, 141, 242, 1), 0 0 10px 2px rgba(143, 141, 242, 1), 0 0 10px 2px rgba(143, 141, 242, 1), 0 0 10px 2px rgba(143, 141, 242, 1);
+}
+    .pics {
+        gap: 10px;
+        margin-right: 10px;
+    }
+
+    .todo_text {
+        padding: 0 10px;
+    }
+
+    .edit_icon {
+        width: 20px;
+        height: 20px;
+        }
+    .delete_icon {
+            width: 20px;
+            height: 20px;
+            }
+    .completed {
+                box-shadow: none;
+            }
+    
+        }

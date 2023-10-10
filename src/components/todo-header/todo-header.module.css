@@ -1,0 +1,24 @@
+.header_container {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    top: 5px;
+    left: 5px;
+    Color: rgba(193, 191, 249, 0.5);
+    /* text-shadow: 4px 4px 2px rgba(193, 191, 249, 1); */
+}
+
+.icon {
+    background-image: url(../../images/logo.svg);
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: contain;
+}
