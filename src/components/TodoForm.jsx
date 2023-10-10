@@ -4,11 +4,36 @@ import styles from "./todo-form.module.css";
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState("");
+  const [isValid, setIsValid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  // const [symbols, setSymbols] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(value);
-    setValue("");
+    if (isValid) {
+      addTodo(value);
+      setValue("");
+      setIsValid(false);
+      setErrorMessage("");
+    }
+  };
+
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+
+    if (newValue.trim() === "") {
+      setIsValid(false);
+      setErrorMessage("Заметка не может быть пустой");
+    } else if (newValue.length > 50) {
+      setIsValid(false);
+      setErrorMessage("Максимальная длина заметки 58 символов");
+    } else if (newValue.length < 3) {
+      setIsValid(false);
+      setErrorMessage("Минимальная длина заметки 3 символа ");
+    } else {
+      setIsValid(true);
+      setErrorMessage("");
+    }
   };
 
   return (
@@ -18,10 +43,19 @@ const TodoForm = ({ addTodo }) => {
         type="text"
         value={value}
         placeholder="Что будем делать сегодня?"
-        onChange={(e) => setValue(e.target.value)}
-        // required={true}
+        onChange={(e) => {
+          setValue(e.target.value);
+          handleChange(e);
+        }}
       />
-      <button type="submit" className={styles.todo_btn}>
+      {errorMessage && <p className={styles.error_message}>{errorMessage}</p>}
+      <button
+        disabled={!isValid}
+        type="submit"
+        className={`${styles.todo_btn} ${
+          !isValid ? styles.todo_btn_disabled : ""
+        }`}
+      >
         Добавить цель
       </button>
     </form>

@@ -1,6 +1,8 @@
 .todo_form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     margin-bottom: 20px;
     width: 100%;
@@ -13,6 +15,7 @@
     background-color: rgba(193, 191, 249, 1);
     border-radius: 15px;
     border: none;
+    margin: 5px 0;
     padding: 0 24px;
     color: rgba(48, 46, 157, 1);
     font-family: JetBrains Mono;
@@ -50,6 +53,12 @@
     /* box-shadow: 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1), 0 0 15px 2px rgba(143, 141, 242, 1); */
     box-shadow: 0 0 15px 2px rgba(191, 174, 121, 1), 0 0 15px 2px rgba(191, 174, 121, 1), 0 0 15px 2px rgba(191, 174, 121, 1), 0 0 15px 2px rgba(191, 174, 121, 1);
 }
+.error_message {
+    font-size: 18px;
+    color: rgb(234, 179, 60);
+    margin: 0;
+    text-shadow: 2px 2px 8px #d7b3f7;
+}
 
 @media (max-width: 459px) {
     .todo_form {
@@ -69,4 +78,14 @@
         font-size: 15px;
         line-height: 20px;
     }
+    .error_message {
+        font-size: 13px;
+    }
+}
+
+.todo_btn_disabled {
+    background-color:  rgba(193, 191, 249, 0.5);
+}
+.todo_btn_disabled:hover {
+    box-shadow: none;
 }

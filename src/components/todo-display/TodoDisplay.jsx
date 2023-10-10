@@ -21,8 +21,7 @@ const TodoDisplay = ({
             key={todo.id}
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
-            edit
-            Todo={editTodo}
+            editTodo={editTodo}
           />
         )
       )}
