@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
@@ -9,16 +9,14 @@ import TodoCount from "./todo-count/TodoCount";
 import TodoHeader from "./todo-header/TodoHeader";
 import TodoDisplay from "./todo-display/TodoDisplay";
 
-// 1. Написать валидацию к полю сделать каcтомные сообщения об ошибках
-// 2. Сделать более сложную логику подсчета задач что бы было больше вариантов текста
-// 3. Отсортировать карточки по новизне. что бы новые были сверху (i don't know we are rly needs this feat?)
-// 5. Сделать кастомный скролл (its hard and i not understand how release this feat)
-
-// 6. Create database using localStorage
-// 7. Resolve text overlay problem when u write long text, may be should make max string length?
-
 const TodoWrapper = () => {
-  const [todos, setTodos] = useState([]);
+  const initialState = JSON.parse(localStorage.getItem("todos")) || [];
+  const [todos, setTodos] = useState(initialState);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const addTodo = (todo) => {
     const id = new Date().getTime();
     setTodos([
@@ -81,3 +79,23 @@ const TodoWrapper = () => {
 };
 
 export default TodoWrapper;
+
+// 1. Написать валидацию к полю сделать каcтомные сообщения об ошибках
+// 2. Сделать более сложную логику подсчета задач что бы было больше вариантов текста
+// 3. Отсортировать карточки по новизне. что бы новые были сверху (i don't know we are rly needs this feat?)
+// 5. Сделать кастомный скролл (its hard and i not understand how release this feat)
+
+// 6. Create database using localStorage
+// 7. Resolve text overlay problem when u write long text, may be should make max string length?
+// 8. Написать тесты на пропсы
+
+// const handleListItemClick = React.useCallback(
+//   (item) => {
+//     console.log(item, 'По этому элементу кликнули')
+//   },
+//   []
+// );
+
+// const handleListItemClick = (item) => {
+//   console.log(item, 'По этому элементу кликнули')
+// }
