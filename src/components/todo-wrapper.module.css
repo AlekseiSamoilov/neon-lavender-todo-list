@@ -8,6 +8,14 @@
     position: relative;
     /* max-width: 600px; */
     width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 459px) {
+    .todo_container {
+        max-width: 320px;
+        padding: 10px;
+    }
 }
 
 .todo_title {
