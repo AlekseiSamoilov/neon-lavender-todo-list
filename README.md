@@ -1,6 +1,6 @@
 # Neon Lavender To Do List 
 
-Используемые технологии: React(хуки) + Vite, стили на CSS
+Используемые технологии: React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
