@@ -1,6 +1,6 @@
-# 🟣 Violet Todo
+# 🟣 Neon lavender todo list 
 
-Violet Todo is a sleek, simple, and efficient todo list application designed to help you organize your tasks with style. With its elegant purple theme and intuitive interface, managing your daily tasks has never been more enjoyable!
+Neon lavender todo list is a sleek, simple, and efficient todo list application designed to help you organize your tasks with style. With its elegant purple theme and intuitive interface, managing your daily tasks has never been more enjoyable!
 
 ## ✨ Features
 
